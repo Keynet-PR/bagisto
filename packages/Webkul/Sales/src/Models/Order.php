@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Webkul\Checkout\Models\CartProxy;
+use Webkul\Notification\Models\NotificationProxy;
 use Webkul\Sales\Contracts\Order as OrderContract;
 use Webkul\Sales\Database\Factories\OrderFactory;
 
@@ -408,5 +409,10 @@ class Order extends Model implements OrderContract
     protected static function newFactory(): Factory
     {
         return OrderFactory::new();
+    }
+
+    public function notifications()
+    {
+        return $this->morphMany(NotificationProxy::class, 'notifiable');
     }
 }

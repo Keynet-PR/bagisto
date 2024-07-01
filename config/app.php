@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1); 
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
@@ -237,6 +237,8 @@ return [
         Webkul\Tax\Providers\TaxServiceProvider::class,
         Webkul\Theme\Providers\ThemeServiceProvider::class,
         Webkul\User\Providers\UserServiceProvider::class,
+        Webkul\WriteProgram\Providers\WriteProgramServiceProvider::class,
+       
     ])->toArray(),
 
     /*

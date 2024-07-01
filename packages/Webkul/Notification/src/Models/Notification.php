@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1); 
 
 namespace Webkul\Notification\Models;
 
@@ -20,5 +20,10 @@ class Notification extends Model implements NotificationContract
     public function order()
     {
         return $this->belongsTo(OrderProxy::modelClass());
+    }
+
+    public function notifiable()
+    {
+        return $this->morphTo();
     }
 }
